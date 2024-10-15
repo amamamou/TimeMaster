@@ -12,25 +12,47 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+theme: ThemeData(
+  // Define the primary and secondary colors
+  primaryColor: const Color(0xFF4169E1), // primary-color
+  colorScheme: ColorScheme.fromSwatch().copyWith(
+    secondary: const Color(0xFF0052B4), // secondary-color
+    primary: const Color(0xFF4169E1),
+  ),
+  
+  // Background color (scaffold background)
+  scaffoldBackgroundColor: const Color.fromARGB(250, 250, 250, 250), // body-color
+  
+  // Define text styles using the updated TextTheme
+  textTheme: const TextTheme(
+    bodyMedium: TextStyle(color: Color(0xFF000000), fontSize: 16), // text color and font size
+  ),
+  
+  // Define button themes for ElevatedButton
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: const Color(0xFFE8232B), // primary-button-color
+      foregroundColor: Colors.white, // Text color on buttons
+    ),
+  ),
+
+  // AppBar theme
+  appBarTheme: const AppBarTheme(
+    backgroundColor: Color(0xFF4169E1), // side-bar-dashboard-color
+    titleTextStyle: TextStyle(
+      color: Colors.white, // AppBar text color
+      fontSize: 20, // AppBar text size
+    ),
+  ),
+
+  // Floating action button theme
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    backgroundColor: Color(0xFF4169E1), // Floating button color
+  ),
+),
+
+
+
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
