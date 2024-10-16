@@ -14,11 +14,13 @@
           <h2>Welcome Back!</h2>
           <h3>To <span class="brand-name">TimeMaster</span></h3>
         </header>
-        <form>
-          <input type="text" placeholder="Username" class="input-field" />
-          <input type="password" placeholder="Password" class="input-field" />
+        <form (ngSubmit)="onSubmit()">
+          <input type="text" [(ngModel)]="username" name="username" placeholder="Username" class="input-field" required />
+          <input type="password" [(ngModel)]="password" name="password" placeholder="Password" class="input-field" required />
           <button type="submit" class="login-btn">Login</button>
         </form>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
         <p class="register-text">Need assistance? <a href="#">Contact Administration</a></p>
         <nav class="social-media-icons">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
