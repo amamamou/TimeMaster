@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:timemastermobile_front/Authentification/loginPage.dart';
+import 'package:timemastermobile_front/Screens/change_data_scholl_screen.dart';
+import 'package:timemastermobile_front/Screens/dashbord_page_screen.dart';
+import 'package:timemastermobile_front/Screens/login_screen.dart';
+import 'package:timemastermobile_front/Screens/schedule_screen.dart';
+import 'package:timemastermobile_front/Screens/slash_screen.dart';
+import 'package:timemastermobile_front/Screens/tabs_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,35 +14,37 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login Page',
+      debugShowCheckedModeBanner: false,
+      title: "Time Master",
       theme: ThemeData(
-        primaryColor: const Color(0xFF4169E1),
+        primaryColor: Color.fromRGBO(65, 105, 225, 100),
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          secondary: const Color(0xFF0052B4),
-          primary: const Color(0xFF4169E1),
-        ),
-        scaffoldBackgroundColor: const Color(0xFFEFEFFF),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF4169E1), // Login button color
-            foregroundColor: Colors.white, // Text color on buttons
-          ),
-        ),
-        inputDecorationTheme: const InputDecorationTheme(
-          filled: true,
-          fillColor: Colors.white,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(30.0)),
-            borderSide: BorderSide.none,
-          ),
+            secondary: const Color.fromRGBO(183, 28, 28, 1)),
+        brightness: Brightness.light,
+        appBarTheme: const AppBarTheme(
+          color: Color.fromRGBO(65, 105, 225, 100),
+          elevation: 4,
+          centerTitle: true,
         ),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
+      // home: TabBarScreen() ,
+
+      initialRoute: '/' ,
+      routes: {
+        '/': (context) => const SlashScreen(),
+        '/tabBar': (context) => const TabBarScreen(),
+        '/dashboard' : (context) => const DashbordPageScreen() ,
+        '/schedule': (context) => const ScheduleScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/changeDataSchool': (context) => const ChangeDataSchollScreen(),
+        
+      },
     );
   }
 }
+
 

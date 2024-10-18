@@ -10,7 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
+  http: ^0.13.3
+
+cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
@@ -22,7 +24,7 @@ flutter:
 
   # Correct asset configuration
   assets:
-    - assets/logo.png
-    - assets/facebook.png
-    - assets/whatsapp.png
-    - assets/telegram.png
+    - images/logos/
+    - images/covers/
+    - images/graphic-icons/
+    - images/Login/

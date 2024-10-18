@@ -1,12 +1,20 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Post, Body } from '@nestjs/common';
+import { LoginService } from './app.service';
+import { LoginDto } from './login.dto';
 
-@Controller()
+@Controller('api') // Base route for the API
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: LoginService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Post('/login') // Endpoint for login
+  async login(@Body() loginDto: LoginDto) {
+    const { username, password } = loginDto;
+    
+    // Example check (you should replace this with your real authentication logic)
+    if (username === 'admin' && password === 'admin') {
+      return { success: true, message: 'Login successful' };
+    } else {
+      return { success: false, message: 'Invalid credentials' };
+    }
   }
 }
