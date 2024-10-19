@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, TableInheritance } from "typeorm";
 
 @Entity()
+@TableInheritance({ column: { type: 'varchar', name: 'role' } })
 export class User {
     @PrimaryGeneratedColumn()
     id: number;
