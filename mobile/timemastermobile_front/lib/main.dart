@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Time Master",
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(65, 105, 225, 100),
+        primaryColor: const Color.fromRGBO(65, 105, 225, 100),
         colorScheme: ColorScheme.fromSwatch().copyWith(
             secondary: const Color.fromRGBO(183, 28, 28, 1)),
         brightness: Brightness.light,

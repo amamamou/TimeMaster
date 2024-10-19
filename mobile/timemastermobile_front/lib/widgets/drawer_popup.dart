@@ -29,10 +29,10 @@ class DrawerPopup extends StatelessWidget {
                 height: 100,
                 width: double.infinity,
 
-                padding: EdgeInsets.only(top: 40),
+                padding: const EdgeInsets.only(top: 40),
                 alignment: Alignment.center,
-                color: Color.fromRGBO(65, 105, 225, 100),
-                child: Text("Menu" , 
+                color: const Color.fromRGBO(65, 105, 225, 100),
+                child: const Text("Menu" , 
                 style: TextStyle(
                   color: Colors.white ,
                   fontSize: 25 ,
@@ -41,7 +41,7 @@ class DrawerPopup extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
 
               listTileWidget("School Data" , Icons.business ,
                (){

@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http; // Import the HTTP package
 import 'dart:convert'; // For JSON encoding and decoding
-import 'package:timemastermobile_front/Screens/tabs_screen.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  LoginPage({super.key});
   Future<void> _login(BuildContext context) async {
-    // Replace this with your actual backend URL
-    const String apiUrl =
-        'http://10.0.2.2:3000/api/login'; // Update with your computer's IP address for physical devices
+    const String apiUrl = 'http://localhost:3000/users/login';
 
     try {
-      // Send a POST request with the username and password
-      final response = await http.post(
+      http.Response response = await http.post(
         Uri.parse(apiUrl),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
@@ -23,32 +20,28 @@ class LoginPage extends StatelessWidget {
         }),
       );
 
-      // Check if login was successful
+      print('Response status code: ${response.statusCode}');
+      print('Response body: ${response.body}');
+
       if (response.statusCode == 200) {
         final responseData = jsonDecode(response.body);
 
-        if (responseData['message'] == 'Login successful') {
-          // Update based on your backend response
-          // Navigate to TabBarScreen if login is successful
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const TabBarScreen()),
-          );
+        // Check if redirectUrl is present and navigate accordingly
+        if (responseData['redirectUrl'] == '/tabBar') {
+          Navigator.pushReplacementNamed(context, '/tabBar');
         } else {
-          // Show error message if login failed
           _showErrorDialog(context, responseData['message']);
         }
       } else {
-        // Show error message if server did not return a 200 status
         _showErrorDialog(context, "Server error. Please try again.");
       }
     } catch (error) {
-      print('Error: $error'); // Log the error for debugging
-      _showErrorDialog(context, "Connection error. Please try again.$error");
+      print('Error: $error');
+      _showErrorDialog(context, "Connection error. Please try again.");
     }
   }
 
-  // Function to show error dialog
+// Function to show error dialog
   void _showErrorDialog(BuildContext context, String message) {
     showDialog(
       context: context,
@@ -83,7 +76,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const SizedBox(height: 20),
-                    Image.asset('images/login/login-logo.png', height: 100),
+                    Image.asset('images/Login/login-logo.png'),
                     const SizedBox(height: 20),
                     const Text(
                       'Welcome Back!',
@@ -123,7 +116,8 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
-                        _login(context); // Call the login function
+                        Navigator.pushReplacementNamed(context,
+                            '/tabBar'); // Hardcoded navigation for testing
                       },
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(double.infinity, 50),

@@ -17,14 +17,14 @@ class ChoiseCard extends StatelessWidget {
           MaterialPageRoute(builder: (context) => route),
         );
       },
-      child: Container(
+      child: SizedBox(
                       width : 50 ,
                       height: 999,
                       child: Card(            
                         color: Colors.blue[50],
                         child:  Icon(
                            icon, 
-                           color: Color.fromRGBO(17, 55, 171, 1),
+                           color: const Color.fromRGBO(17, 55, 171, 1),
                            size: 55,
                         ),
                       ),

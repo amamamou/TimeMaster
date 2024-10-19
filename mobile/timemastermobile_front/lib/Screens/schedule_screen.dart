@@ -12,7 +12,7 @@ class ScheduleScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
+            const Center(
               child: Icon(Icons.access_time_filled_sharp,
               color: Colors.red,
               size: 200,

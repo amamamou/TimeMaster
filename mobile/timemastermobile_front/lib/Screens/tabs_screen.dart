@@ -19,7 +19,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
 
   int _selectedScreenIndex = 0;
 
-  final List<Widget> _screens = [DashbordPageScreen(), ScheduleScreen()];
+  final List<Widget> _screens = [const DashbordPageScreen(), const ScheduleScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
           selectedItemColor: Colors.red[900],
           unselectedItemColor: Colors.white,
           currentIndex: _selectedScreenIndex, //ta3ref anaho el tab el manzoul
-          items: [
+          items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.dashboard), label: 'Dashboard'),
             BottomNavigationBarItem(

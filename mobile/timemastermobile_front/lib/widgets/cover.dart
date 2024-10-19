@@ -12,8 +12,8 @@ class Cover extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.blue[50],
               ),
-              margin: EdgeInsets.all(8),
-              padding: EdgeInsets.all(2),
+              margin: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(2),
 
               width :500 ,
               height: 300,

@@ -14,27 +14,27 @@ class DashbordPageScreen extends StatelessWidget {
       appBar: AppBar(
         title: Image.asset("images/logos/appbar-logo.png"),
       ),
-      drawer: DrawerPopup(),
+      drawer: const DrawerPopup(),
       body: Column(
         children: [
-          Cover(imagePath: "images/covers/home-cove-img.png"),
-          Text(
+          const Cover(imagePath: "images/covers/home-cove-img.png"),
+          const Text(
             "Choose your option",
             style: TextStyle(
                 color: Color.fromRGBO(17, 55, 171, 1),
                 fontSize: 25,
                 fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             width: 50,
           ),
           Expanded(
             // Wrap GridView with Expanded
             child: GridView(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
               ),
-              children: [
+              children: const [
                 ChoiseCard(
                     icon: Icons.business, route: ChangeDataSchollScreen()),
                 ChoiseCard(

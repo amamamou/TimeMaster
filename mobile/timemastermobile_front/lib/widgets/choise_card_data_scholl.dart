@@ -20,7 +20,7 @@ class ChoiseCardDataScholl extends StatelessWidget {
                     //   );
                   },
                    child: Container(
-                    margin: EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: Colors.blue[50] ,
                       borderRadius: BorderRadius.circular(10)
@@ -32,7 +32,7 @@ class ChoiseCardDataScholl extends StatelessWidget {
                         Image.asset(imageUrl),
                         
                         Text(text, 
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold ,
                           

@@ -28,7 +28,7 @@ class _SlashScreenState extends State<SlashScreen>
     )..repeat(); // Repeat the animation continuously for 5 seconds
 
     // Navigate to the dashboard screen after 5 seconds
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => LoginPage()),
       );
@@ -54,7 +54,7 @@ class _SlashScreenState extends State<SlashScreen>
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.blue, Color.fromRGBO(183, 28, 28, 1)],
             begin: Alignment.topRight,
