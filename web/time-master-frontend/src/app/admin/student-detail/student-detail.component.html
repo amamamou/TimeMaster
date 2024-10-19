@@ -1,0 +1,20 @@
+<div class="student-detail">
+    <h2>Détails de l'étudiant</h2>
+    <div class="detail-card">
+      <div class="detail-item">
+        <strong>Nom d'utilisateur :</strong>
+        <span>{{ student.username }}</span>
+      </div>
+      <div class="detail-item">
+        <strong>Rôle :</strong>
+        <span>{{ student.role }}</span>
+      </div>
+      <div class="detail-item">
+        <strong>Groupes de chevauchement :</strong>
+        <span>{{ student.overlappingGroups }}</span>
+      </div>
+     
+    </div>
+    <a routerLink="/students" class="back-button">Retour à la liste des étudiants</a>
+  </div>
+  
