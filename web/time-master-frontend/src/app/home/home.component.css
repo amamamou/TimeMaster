@@ -322,23 +322,28 @@ h5 {
   font-size: 18px;
   margin-bottom: 40px;
 }
-
 .cards {
   display: flex;
   flex-wrap: wrap; /* Allows the cards to wrap to the next line */
   gap: 20px; /* Adds space between the cards */
-  justify-content: flex-start; /* Aligns cards to the start of the row */
+  justify-content: center; /* Center the cards horizontally */
   margin-top: 200px;
 }
 
 .card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: calc(25% - 20px); /* Keeps the card width */
-  margin-bottom: 20px;
-  text-align: center;
+  background-color: #fff; /* White background */
+  border: 1px solid #e0e0e0; /* Light grey border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the card */
+  text-align: center; /* Center the text */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  width: 350px; /* Set a fixed width for the cards */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
 /* Style for even cards */
@@ -350,8 +355,6 @@ h5 {
 .card:nth-child(odd) {
   height: 250px; /* Adjust this height for the shorter cards */
 }
-
-
 
 .card img {
   margin-bottom: 15px;
@@ -367,6 +370,7 @@ h5 {
   font-size: 16px;
   color: #666;
 }
+
 /*section
 */
 .client-section {
