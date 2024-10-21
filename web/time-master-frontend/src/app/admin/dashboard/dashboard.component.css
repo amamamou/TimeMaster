@@ -1,0 +1,88 @@
+@import '~font-awesome/css/font-awesome.css';
+
+:root {
+
+    --body-color: rgb(80, 119, 249);
+    --color-wite: rgb(125, 105, 188);
+    --first-shadow-color: rgba(0 , 0 ,0 , 0.1);
+    --text-color-second: --color-wite ;
+
+    /*main colors :*/
+    --primary-color: #4169E1;
+    --secondary-color: #0052B4;
+    --font-size: 16px;
+
+    /*Button colors :*/
+    --primary-button-color: #E8232B;
+    --secondary-button-color: #7B7E81;
+
+    /*login colors :*/
+    --primary-login-color: #7B7E81;
+    --secondary-login-color :#4169E1 ;
+    --login-button-color : #4169E1 ;
+
+    /*Dashbord Colors :*/
+    --side-bar-dashboord-color : #03113a;
+    --cover-dashboord-color : #0052B4 ;
+    --sign-out-color : #FF9924 ;
+ 
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.menu{
+    background-color: #0052B4 ;
+    width: 19%;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* .menu-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: rgb(13, 12, 12);
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  .menu-item i {
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  
+  .menu-item:hover {
+    background: linear-gradient(to right, #564343, rgba(255, 255, 255, 0));
+    color: var(--side-bar-dashboord-color);
+  }
+  
+  .menu-item.active {
+    background: linear-gradient(to right, #2a2424, rgba(255, 255, 255, 0.2));
+    color: rgb(63, 41, 41);
+  }
+
+.menu-item a{
+    text-decoration: none;
+    color: var(--color-wite);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin : 5px;
+    padding : 3px ;
+}
+ 
+
