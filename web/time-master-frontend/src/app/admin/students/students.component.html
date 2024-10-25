@@ -1,0 +1,58 @@
+<div class="container">
+   
+
+    <!-- Vérifie si on est en mode édition -->
+    <div *ngIf="!isEditing; else editForm">
+        <h1>Students list</h1>
+      <!-- Liste des étudiants -->
+      <div *ngIf="students.length > 0; else noStudents">
+
+        <ul class="student-list">
+          <li *ngFor="let student of students">
+            <span>{{ student.username }}</span>
+          
+            <button class="detail-button" [routerLink]="['/students', student.id]">Informations</button>
+            <button class="edit-button" (click)="startEditing(student)">Edit</button>
+            <button class="delete-button" (click)="deleteStudent(student.id)">Delete</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Message à afficher si la liste est vide -->
+      <ng-template #noStudents>
+        <p>No students available.</p>
+      </ng-template>
+    </div>
+
+
+     <!-- Section pour afficher les informations de l'étudiant sélectionné -->
+     <div *ngIf="selectedStudent" class="student-details">
+        <h2>Student Details</h2>
+        <p><strong>Username:</strong> {{ selectedStudent.username }}</p>
+        <p><strong>Password:</strong> {{ selectedStudent.password }}</p>
+        <p><strong>Role:</strong> {{ selectedStudent.role }}</p>
+        <p><strong>Overlapping Groups:</strong> {{ selectedStudent.overlappingGroups }}</p>
+        <button (click)="clearSelectedStudent()">Close</button>
+      </div>
+
+    <!-- Formulaire d'édition -->
+    <ng-template #editForm>
+      <h2>Edit Student</h2>
+      <form [formGroup]="editStudentForm" (ngSubmit)="updateStudent()">
+        <label for="username">Username</label>
+        <input id="username" formControlName="username" />
+
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" />
+
+        <label for="role">Role</label>
+        <input id="role" formControlName="role" />
+
+        <label for="overlappingGroups">Overlapping Groups</label>
+        <input id="overlappingGroups" formControlName="overlappingGroups" />
+
+        <button type="submit">Update</button>
+        <button type="button" (click)="cancelEditing()">Cancel</button>
+      </form>
+    </ng-template>
+</div>
