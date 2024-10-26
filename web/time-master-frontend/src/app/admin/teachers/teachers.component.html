@@ -1,31 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <app-admin-sidebar></app-admin-sidebar> <!-- Add the sidebar component here -->
 
     <div class="container">
-        <h1>Teachers list</h1>
+        <h1>Teachers List</h1>
         <ul class="student-list">
             <li>
-                <span>teacher 1</span>
-                <button class="detail-button">informations</button>
-                <a href="editteacher.html">
-                <button class="edit-button" >Edit</button>
+                <span>Teacher 1</span>
+                <button class="detail-button">Informations</button>
+                <a routerLink="/edit-teacher/1">
+                    <button class="edit-button">Edit</button>
                 </a>
-                <button class="delete-button">delete</button>
+                <button class="delete-button">Delete</button>
             </li>
             <li>
-                <span>teacher 2</span>
-                <button class="detail-button">informations</button>
-                <a href="editteacher.html">
-                    <button class="edit-button" >Edit</button>
-                    </a>
-
-                <button class="delete-button">delete</button>
+                <span>Teacher 2</span>
+                <button class="detail-button">Informations</button>
+                <a routerLink="/edit-teacher/2">
+                    <button class="edit-button">Edit</button>
+                </a>
+                <button class="delete-button">Delete</button>
             </li>
             <li>
-                <span>teacher 3</span>
-                <button class="detail-button">informations</button>
-                <a href="editteacher.html">
-                    <button class="edit-button" >Edit</button>
-                    </a>
-                <button class="delete-button">delete</button>
+                <span>Teacher 3</span>
+                <button class="detail-button">Informations</button>
+                <a routerLink="/edit-teacher/3">
+                    <button class="edit-button">Edit</button>
+                </a>
+                <button class="delete-button">Delete</button>
             </li>
         </ul>
     </div>
+</body>
+
+</html>

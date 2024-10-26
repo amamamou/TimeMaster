@@ -6,6 +6,8 @@ import { User } from './users/entities/user.entity';
 import { AppService } from './app.service';
 import { UsersController } from './users/users/users.controller';
 import { Students } from './users/entities/student.entity';
+import { Room } from './rooms/rooms/entities/room.entity';
+import { RoomsModule } from './rooms/rooms/rooms.module';
 
 @Module({
   imports: [
@@ -16,13 +18,13 @@ import { Students } from './users/entities/student.entity';
       username: process.env.DB_USER || 'root',
       password: process.env.DB_PASSWORD || '',
       database: process.env.DB_NAME || 'timemaster',
-      entities: [User,Students], // Add your entities here
+      entities: [User, Students, Room], // Add your entities here
       synchronize: true, // Set to false in production
     }),
-    UsersModule],
-    
-  
+    UsersModule,
+    RoomsModule, // Include RoomsModule here
+  ],
   controllers: [UsersController],
-  providers: [AppService , UsersModule] , // Provide the AppService
+  providers: [AppService],
 })
 export class AppModule {}

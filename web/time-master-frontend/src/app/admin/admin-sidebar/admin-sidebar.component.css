@@ -1,0 +1,37 @@
+.menu {
+  background: #4169E1; /* Sidebar background color */
+  padding: 20px; /* Padding around the menu */
+  width: 250px; /* Set a fixed width for the sidebar */
+  height: 100vh; /* Full height */
+  position: fixed; /* Fix the sidebar in place */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  color: #ffffff; /* Text color */
+}
+
+.menu-items {
+  list-style: none; /* Remove list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.menu-item {
+  margin: 15px 0; /* Spacing between menu items */
+}
+
+.menu-item a {
+  display: flex; /* Align icon and text */
+  align-items: center; /* Center vertically */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+}
+
+.menu-item p {
+  margin-left: 10px; /* Space between icon and text */
+  font-weight: 400; /* Normal font weight for text */
+}
+
+.logout {
+  margin-top: auto; /* Push logout to the bottom */
+}

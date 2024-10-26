@@ -15,7 +15,6 @@ body {
 /* Header Styles */
 .site-header {
   position: relative; /* Changed from fixed to relative */
-  width: 1482px;
   background-color: #4169E1;
   padding: 20px 40px;
   display: flex;

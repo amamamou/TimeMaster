@@ -1,7 +1,8 @@
 // src/app/services/auth.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,15 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(this.loginUrl, { username, password }, { observe: 'response' });
+  login(identifier: string, password: string): Observable<any> {
+    return this.http.post(this.loginUrl, { identifier, password }, { observe: 'response' })
+      .pipe(
+        catchError(this.handleError) // Handle errors here if needed
+      );
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    // Log or handle the error appropriately
+    return throwError(error);
   }
 }

@@ -4,8 +4,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentsComponent } from './students/students.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { RoomsComponent } from './rooms/rooms.component';
 
- 
+
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'students', component: StudentsComponent },
   { path: 'teachers', component:TeachersComponent},
   { path: 'students/:id', component: StudentDetailComponent },
-  
+  {path:'rooms', component: RoomsComponent}
+
 ];
 
 @NgModule({

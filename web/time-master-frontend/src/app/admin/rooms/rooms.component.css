@@ -1,0 +1,215 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Sidebar Styles */
+app-admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Adjust width according to your sidebar */
+    height: 100%;
+    background-color: #4169E1;
+    z-index: 1000;
+}
+
+/* Container */
+.container {
+    margin-left: 260px; /* Offset for the sidebar width */
+    padding: 20px;
+}
+
+/* Rooms Container */
+.rooms-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header */
+.rooms-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.room-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.room-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.room-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.room-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button Styling */
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #4169E1;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #3657b2;
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+/* Table Styling */
+.rooms-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rooms-table th, .rooms-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.rooms-table th {
+    background-color: #4169E1;
+    color: #fff;
+}
+
+.rooms-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Align Icons */
+.action-icons {
+    display: flex;
+    justify-content: flex-start; /* Align items to the start */
+    gap: 15px; /* Space between icons */
+}
+
+/* Icon Styling */
+.action-icons .icon {
+    cursor: pointer;
+    font-size: 18px; /* Adjust size as needed */
+    transition: transform 0.2s; /* Animation for hover effect */
+}
+
+.action-icons .icon:hover {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.icon-edit {
+    color: #4caf50; /* Green for Edit */
+}
+
+.icon-delete {
+    color: #f44336; /* Red for Delete */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0;
+    }
+
+    app-admin-sidebar {
+        width: 200px;
+    }
+
+    .room-form {
+        grid-template-columns: 1fr;
+    }
+}
+/* Table Styling */
+.rooms-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rooms-table th, .rooms-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.rooms-table th {
+  background-color: #4169E1;
+  color: #fff;
+}
+
+.rooms-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Align Icons */
+.action-icons {
+  display: flex;
+  justify-content: flex-start; /* Align items to the start */
+  gap: 15px; /* Space between icons */
+  padding: 0; /* Remove padding to align with table */
+  margin: 0; /* Remove margin to align with table */
+}
+
+/* Icon Styling */
+.action-icons .icon {
+  cursor: pointer;
+  font-size: 18px; /* Adjust size as needed */
+  transition: transform 0.2s; /* Animation for hover effect */
+}
+
+.action-icons .icon:hover {
+  transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.icon-edit {
+  color: #4caf50; /* Green for Edit */
+}
+
+.icon-delete {
+  color: #f44336; /* Red for Delete */
+}
