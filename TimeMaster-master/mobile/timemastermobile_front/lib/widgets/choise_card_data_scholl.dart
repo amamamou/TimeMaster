@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 class ChoiseCardDataScholl extends StatelessWidget {
   final String imageUrl ;
   final String text ;
-  //final Widget route; // Accept a Widget as the route
+  final Widget route; // Accept a Widget as the route
 
-  const ChoiseCardDataScholl({super.key, required this.imageUrl, required this.text});
+  const ChoiseCardDataScholl({super.key, required this.imageUrl, required this.text , required this.route});
 
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-                  onTap: (){
-                    print("object") ;
+       onTap: (){
+            // Navigate to the provided route (ChangeDataSchollScreen in your case)
 
-                    //  Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => route),
-                    //   );
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => route),
+        );
                   },
                    child: Container(
                     margin: const EdgeInsets.all(10),

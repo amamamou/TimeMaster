@@ -45,7 +45,7 @@ class DrawerPopup extends StatelessWidget {
 
               listTileWidget("School Data" , Icons.business ,
                (){
-                  print("click 1") ;               
+                 Navigator.pop(context , '/addNameSchool') ;              
                }
               ),
 

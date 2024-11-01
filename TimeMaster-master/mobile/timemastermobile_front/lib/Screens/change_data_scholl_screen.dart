@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:timemastermobile_front/Screens/add_name_school_screen.dart';
 import 'package:timemastermobile_front/widgets/cover.dart';
 import 'package:timemastermobile_front/widgets/drawer_popup.dart';
 
@@ -39,8 +40,8 @@ class ChangeDataSchollScreen extends StatelessWidget {
 
                 children: const [
 
-                    ChoiseCardDataScholl(imageUrl: "images/graphic-icons/university.png", text: "Information establishment"),
-                    ChoiseCardDataScholl(imageUrl: "images/graphic-icons/jour-heurs.png", text: "Days and Hours"),   
+                    ChoiseCardDataScholl(imageUrl: "images/graphic-icons/university.png", text: "Information establishment" , route: AddNameCollageScreen(), ),
+                    ChoiseCardDataScholl(imageUrl: "images/graphic-icons/jour-heurs.png", text: "Days and Hours" , route: AddNameCollageScreen()),   
 
                 ],
               ),

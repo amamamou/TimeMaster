@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timemastermobile_front/Authentification/loginPage.dart';
+import 'package:timemastermobile_front/Screens/add_name_school_screen.dart';
 import 'package:timemastermobile_front/Screens/change_data_scholl_screen.dart';
 import 'package:timemastermobile_front/Screens/dashbord_page_screen.dart';
 import 'package:timemastermobile_front/Screens/login_screen.dart';
@@ -42,7 +42,11 @@ class MyApp extends StatelessWidget {
         '/schedule': (context) => const ScheduleScreen(),
         '/login': (context) => const LoginScreen(),
         '/changeDataSchool': (context) => const ChangeDataSchollScreen(),
+<<<<<<< HEAD:TimeMaster-master/mobile/timemastermobile_front/lib/main.dart
          '/matieres': (context) => AjoutMatiereScreen(),
+=======
+        '/addNameSchool' : (contex) => const AddNameCollageScreen()
+>>>>>>> 558f2c8 (add page name school (frentend)):mobile/timemastermobile_front/lib/main.dart
         
       },
     );

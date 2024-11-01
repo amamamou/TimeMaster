@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:timemastermobile_front/Authentification/loginPage.dart';
+<<<<<<< HEAD:TimeMaster-master/mobile/timemastermobile_front/lib/Screens/slash_screen.dart
 import 'package:timemastermobile_front/Screens/tabs_screen.dart';
 import 'package:timemastermobile_front/home-page.dart';
+=======
+
+>>>>>>> 558f2c8 (add page name school (frentend)):mobile/timemastermobile_front/lib/Screens/slash_screen.dart
 
 class SlashScreen extends StatefulWidget {
   const SlashScreen({super.key});

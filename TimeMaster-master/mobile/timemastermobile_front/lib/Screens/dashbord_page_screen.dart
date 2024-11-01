@@ -36,27 +36,36 @@ class DashbordPageScreen extends StatelessWidget {
               ),
               children: const [
                 ChoiseCard(
-                    icon: Icons.business, route: ChangeDataSchollScreen()),
+                    icon: Icons.business,
+                    title :"School Data" ,
+                    route: ChangeDataSchollScreen()),
                 ChoiseCard(
                     icon: Icons.file_copy_outlined,
+                    title :"..." ,
                     route: ChangeDataSchollScreen()),
                 ChoiseCard(
                     icon: Icons.insert_drive_file_outlined,
+                    title :"School Data" ,
                     route: ChangeDataSchollScreen()),
                 ChoiseCard(
                     icon: Icons.menu_book_sharp,
+                    title :"School Data" ,
                     route: ChangeDataSchollScreen()),
                 ChoiseCard(
                     icon: Icons.date_range_outlined,
+                    title :"School Data" ,
                     route: ChangeDataSchollScreen()),
                 ChoiseCard(
                     icon: Icons.supervised_user_circle_rounded,
+                    title :"School Data" ,
                     route: ChangeDataSchollScreen()),
                 ChoiseCard(
                     icon: Icons.manage_accounts,
+                    title :"School Data" ,
                     route: ChangeDataSchollScreen()),
                 ChoiseCard(
                     icon: Icons.filter_alt_rounded,
+                    title :"School Data" ,
                     route: ChangeDataSchollScreen()),
               ],
             ),
