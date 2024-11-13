@@ -28,7 +28,7 @@ export class RoomService {
 
   // Update an existing room
   updateRoom(id: number, room: Partial<Room>): Observable<Room> {
-    return this.http.put<Room>(`${this.apiUrl}/${id}`, room);
+    return this.http.patch<Room>(`${this.apiUrl}/${id}`, room);
   }
 
   // Delete a room
