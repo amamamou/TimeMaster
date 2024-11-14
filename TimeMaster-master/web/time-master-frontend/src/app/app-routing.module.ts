@@ -6,15 +6,23 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { StudentsComponent } from './admin/students/students.component';
 import { TeachersComponent } from './admin/teachers/teachers.component';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
+import { UserDashboardComponent } from './users/user-dashboard/user-dashboard.component';
+import { SchoolTimetableComponent } from './users/school-timetable/school-timetable.component';
+import { DiscussionResultsComponent } from './users/discussion-results/discussion-results.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'students', component: StudentsComponent },
   { path: 'teachers', component: TeachersComponent },
-  {path: 'sidebar',component:AdminSidebarComponent}
+  { path: 'sidebar',component:AdminSidebarComponent },
+  { path: 'userdashboard',component:UserDashboardComponent },
+  { path: 'timetable', component: SchoolTimetableComponent },
+  { path: 'discussion-results', component: DiscussionResultsComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
+  { path: '**', redirectTo: '/home' } // Wildcard route for invalid URLs
 
 ];
 

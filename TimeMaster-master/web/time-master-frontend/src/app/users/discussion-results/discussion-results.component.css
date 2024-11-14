@@ -1,0 +1,64 @@
+.discussion-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    flex: 1;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #bfbbff57;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.403);
+    color: #333;
+  }
+
+  .app-container {
+    display: flex;
+    height: 100vh; /* Full height*/
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #ae2025;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .response {
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+  }
+  

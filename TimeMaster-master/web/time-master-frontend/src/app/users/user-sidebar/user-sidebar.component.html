@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeMaster - Schedule Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.icons8.com/fonts/line-awesome/1.0.0/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/healthicons/1.0.0/healthicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="menu">
+    <div class="logo">
+        <img src="assets/dashbord-logo.png" alt="logo">
+    </div>
+    <div class="menu-items">
+        <div class="menu-item">
+            <a [routerLink]="['/userdashboard']">
+                <i class="fa-solid fa-house" style="color: #ffffff; font-size: 18px;"></i>
+                <p>Home</p>
+            </a>
+        </div>
+
+        <div class="menu-item">
+            <a [routerLink]="['/timetable']">
+                <i class="fa-solid fa-user-graduate" style="color: #ffffff; font-size: 18px;"></i>
+                <p>Check Timetable</p>
+            </a>
+        </div>
+
+        <div class="menu-item">
+            <a [routerLink]="['/discussion-results']">
+                <i class="fa-solid fa-chalkboard-teacher" style="color: #ffffff; font-size: 18px;"></i>
+                <p>Discussion of results</p>
+            </a>
+        </div>
+
+        <div class="menu-item">
+            <a [routerLink]="['/']">
+                <i class="fa-solid fa-chalkboard" style="color: #ffffff; font-size: 18px;"></i>
+                <p>Settings</p>
+            </a>
+        </div>
+
+        <div class="menu-item logout">
+            <a [routerLink]="['/logout']">
+                <i class="fa-solid fa-sign-out-alt" style="color: #ff4d4d; font-size: 18px;"></i>
+                <p class="logout-text" style="color: #ff4d4d;">Sign Out</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

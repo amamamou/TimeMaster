@@ -1,0 +1,38 @@
+<div class="app-container">
+        <app-user-sidebar></app-user-sidebar>
+
+        <div class="discussion-container">
+            <h2>Discussion of Results</h2>
+            <p>If you would like to request a change to the timetable, please send a message to the admin below:</p>
+        
+            <form (ngSubmit)="sendMessage()">
+            <div class="form-group">
+                <label for="teacherName">Your Name</label>
+                <input
+                type="text"
+                id="teacherName"
+                [(ngModel)]="teacherName"
+                name="teacherName"
+                required
+                />
+            </div>
+        
+            <div class="form-group">
+                <label for="message">Message to Admin</label>
+                <textarea
+                id="message"
+                [(ngModel)]="message"
+                name="message"
+                rows="5"
+                placeholder="Write your message here..."
+                required
+                ></textarea>
+            </div>
+        
+            <button type="submit" [disabled]="!teacherName || !message">Send Message</button>
+            </form>
+        
+            <p *ngIf="responseMessage" class="response">{{ responseMessage }}</p>
+        </div>
+        
+</div>
