@@ -10,6 +10,8 @@ import { Room } from './rooms/rooms/entities/room.entity'; // Keeping this impor
 import { RoomsModule } from './rooms/rooms/rooms.module'; // Keeping this import
 import { MatiereModule } from './matiere/matiere.module'; // Keeping this import
 import { Matiere } from './users/entities/matiere.entity'; // Keeping this import
+import { EstablishmentModule } from './Establishment/module/establishment.module';
+import { Establishment } from './Establishment/entities/establishment.entity';
 //import { MatiereController } from './matiere/matiere.controller'; // Keeping this import
 
 @Module({
@@ -21,12 +23,13 @@ import { Matiere } from './users/entities/matiere.entity'; // Keeping this impor
       username: process.env.DB_USER || 'root',
       password: process.env.DB_PASSWORD || '',
       database: process.env.DB_NAME || 'timemaster',
-      entities: [User, Students, Room, Matiere], // Add your entities here
+      entities: [User, Students, Room, Matiere,Establishment], // Add your entities here
       synchronize: true, // Set to false in production
     }),
     UsersModule,
     RoomsModule, // Include RoomsModule here
     MatiereModule, // Include MatiereModule here
+    EstablishmentModule,
   ],
   controllers: [UsersController],
   providers: [AppService],

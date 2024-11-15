@@ -4,10 +4,10 @@ import { AppModule } from './app.module';
 import * as session from 'express-session';
 import * as cors from 'cors';
 
-
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(cors()); // Enable CORS for all routes
+
   // Initialize the MySQLStore with a session instance
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const MySQLStore = require('express-mysql-session')(session);
@@ -32,7 +32,6 @@ async function bootstrap() {
       },
     }),
   );
- 
   
   await app.listen(3000);
 }
