@@ -4,6 +4,6 @@ export interface Student {
     password: string;     // Le mot de passe de l'étudiant
     role: string;         // Le rôle de l'étudiant
     overlappingGroups?: string;  // Optionnel - Les groupes superposés
-    assignedActivities?: any[];  // Optionnel - Les activités assignées (ceci est une liste d'activités)
+     
   }
   

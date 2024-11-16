@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentsComponent } from './students/students.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { TeacherDetailComponent } from './teacher-detail/teacher-detail.component';
 
  
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'students', component: StudentsComponent },
   { path: 'teachers', component:TeachersComponent},
   { path: 'students/:id', component: StudentDetailComponent },
+  { path: 'teachers/:id', component: TeacherDetailComponent },
   
 ];
 

@@ -48,3 +48,96 @@ h1 {
 .edit-button:hover, .delete-button:hover {
     background-color: #0056b3;
 }
+
+/* Style général du formulaire */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style des labels */
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style des champs de saisie */
+
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  /* Effet sur les champs de saisie lors du focus */
+  form input[type="text"]:focus,
+  form input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Style des boutons */
+  form button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Style du bouton Save */
+  form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Style du bouton Cancel */
+  form button[type="button"] {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  /* Effet de hover sur les boutons */
+  form button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Espacement entre les champs et boutons */
+  form button,
+  form input {
+    margin-bottom: 15px;
+  }
+  
+  /* Pour petits écrans (responsive design) */
+  @media (max-width: 600px) {
+    form {
+      padding: 15px;
+      margin: 10px;
+    }
+    
+    form label {
+      font-size: 14px;
+    }
+  
+    form input {
+      font-size: 14px;
+    }
+  
+    form button {
+      font-size: 14px;
+    }
+  }
+  

@@ -8,6 +8,7 @@ import { StudentsComponent } from './students/students.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { TeacherDetailComponent } from './teacher-detail/teacher-detail.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
     StudentsComponent,
     TeachersComponent,
     StudentDetailComponent,
+    TeacherDetailComponent,
    
   ],
   imports: [

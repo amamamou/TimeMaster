@@ -7,6 +7,9 @@ import { AppService } from './app.service';
 import { UsersController } from './users/users/users.controller';
 import { Students } from './users/entities/student.entity';
 
+import { Teacher } from './users/entities/teacher.entity';
+
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -16,7 +19,7 @@ import { Students } from './users/entities/student.entity';
       username: process.env.DB_USER || 'root',
       password: process.env.DB_PASSWORD || '',
       database: process.env.DB_NAME || 'timemaster',
-      entities: [User,Students], // Add your entities here
+      entities: [User,Students,Teacher], // Add your entities here
       synchronize: true, // Set to false in production
     }),
     UsersModule],
