@@ -1,0 +1,73 @@
+<div class="app-layout">
+  <!-- Sidebar -->
+  <app-admin-sidebar></app-admin-sidebar>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <div class="header">
+        <h1>Name of the establishment</h1>
+        <img src="../../assets/school-icon.png" alt="School Icon" />
+      </div>
+
+      <div class="form-container">
+        <h2>Management School</h2>
+        <label for="schoolInput">Enter the name of the establishment</label>
+        <input
+          id="schoolInput"
+          type="text"
+          [(ngModel)]="schoolName"
+          placeholder="Enter school name"
+        />
+        
+        <!-- Display the form when the name is entered -->
+        <div *ngIf="schoolName">
+          <h3>Enter the establishment details:</h3>
+          <label for="addressInput">Address:</label>
+          <input
+            id="addressInput"
+            type="text"
+            [(ngModel)]="address"
+            placeholder="Enter address"
+          />
+          <label for="phoneInput">Phone:</label>
+          <input
+            id="phoneInput"
+            type="text"
+            [(ngModel)]="phone"
+            placeholder="Enter phone number"
+          />
+          <label for="emailInput">Email:</label>
+          <input
+            id="emailInput"
+            type="email"
+            [(ngModel)]="email"
+            placeholder="Enter email"
+          />
+
+          <div class="button-group">
+            <button class="create" (click)="selectedEstablishmentId ? saveUpdatedEstablishment() : handleCreate()">
+              {{ selectedEstablishmentId ? 'Update' : 'Create' }}
+            </button>
+            <button class="cancel" (click)="clearForm()">Cancel</button>
+          </div>
+        </div>
+        
+        <!-- Display All Establishments -->
+        <button class="all-names" (click)="showAllEstablishments()">All the Names</button>
+      </div>
+
+      <!-- Display all establishments -->
+      <div *ngIf="establishments.length > 0">
+        <h3>All Establishments</h3>
+        <ul>
+          <li *ngFor="let establishment of establishments">
+            {{ establishment.name }}
+            <button  class="create" (click)="handleUpdate(establishment.id)">Modify</button>
+            <button  class="cancel" (click)="handleDelete(establishment.id)">Delete</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
