@@ -1,0 +1,78 @@
+.app-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f2f5; /* Light background for contrast */
+  }
+
+.containerSettings{
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    height: 90%;
+    border: 1px solid black;
+    margin: 50px;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: inset black ;
+
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info p{
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+.alldata{
+    display: flex;
+    align-items: center;  
+    margin-top: 25px;
+}
+.alldata img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.containerForm{
+    border: 1px solid black;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.btn{
+    padding: 10px;
+    width: 150px;
+    color: white;
+}
+
+.buttons{
+    margin-top: 50px;
+}
+
+.btn_ok{
+    background-color: #2DC071;
+    margin: 2.5px;
+}
+.btn_no{
+    background-color: #E74040;
+    margin: 2.5px;
+}
+.btn_ok:hover{
+    background-color: #2dc0725f;
+}
+.btn_no:hover{
+    background-color: #e740404f;
+}
+
+.inputForm{
+    width: 350px;
+    height: 45px;
+    border-radius: 10px;
+    padding: 5px;
+}

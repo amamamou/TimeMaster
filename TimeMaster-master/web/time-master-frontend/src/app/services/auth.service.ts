@@ -9,6 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class AuthService {
   private loginUrl = 'http://localhost:3000/users/login'; // Correct URL for the login endpoint
+  currentUserValue: any;
 
   constructor(private http: HttpClient) {}
 

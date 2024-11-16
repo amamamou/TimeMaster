@@ -25,8 +25,6 @@
     --side-bar-dashboord-color : #4169E1;
     --cover-dashboord-color : #b8bfc7b4 ;
     --sign-out-color : #FF9924 ;
- 
-
 }
 
 *{
@@ -38,13 +36,14 @@
     background-color: #4169E1 ;
     width: auto;
     height: 100vh;
-    padding: 20px;
+    padding: 20px;   
 }
 
 .menu-items{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
 .menu-item {

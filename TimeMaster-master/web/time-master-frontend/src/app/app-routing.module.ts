@@ -9,6 +9,7 @@ import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.compo
 import { UserDashboardComponent } from './users/user-dashboard/user-dashboard.component';
 import { SchoolTimetableComponent } from './users/school-timetable/school-timetable.component';
 import { DiscussionResultsComponent } from './users/discussion-results/discussion-results.component';
+import { SettingsComponent } from './users/settings/settings.component';
 
 
 const routes: Routes = [
@@ -17,10 +18,11 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'students', component: StudentsComponent },
   { path: 'teachers', component: TeachersComponent },
-  { path: 'sidebar',component:AdminSidebarComponent },
+  // { path: 'sidebar',component:AdminSidebarComponent },
   { path: 'userdashboard',component:UserDashboardComponent },
   { path: 'timetable', component: SchoolTimetableComponent },
   { path: 'discussion-results', component: DiscussionResultsComponent },
+  { path: 'settings', component: SettingsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
   { path: '**', redirectTo: '/home' } // Wildcard route for invalid URLs
 

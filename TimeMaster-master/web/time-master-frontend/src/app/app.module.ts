@@ -16,6 +16,8 @@ import { HeaderComponent } from './users/header/header.component';
 import { ActionCardComponent } from './users/action-card/action-card.component';
 import { SchoolTimetableComponent } from './users/school-timetable/school-timetable.component';
 import { DiscussionResultsComponent } from './users/discussion-results/discussion-results.component'; // Assurez-vous que le chemin est correct
+import { UserService } from './users/user.service';
+import { SettingsComponent } from './users/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { DiscussionResultsComponent } from './users/discussion-results/discussio
     ActionCardComponent,
     SchoolTimetableComponent,
     DiscussionResultsComponent,
+    SettingsComponent,
     // Pas besoin de déclarer DashboardComponent ici, il est déjà déclaré dans AdminModule
   ],
   imports: [
@@ -37,7 +40,7 @@ import { DiscussionResultsComponent } from './users/discussion-results/discussio
     HttpClientModule, // Ajoutez HttpClientModule ici
     AdminModule, // Ajoutez AdminModule ici
   ],
-  providers: [],
+  providers: [UserService], // Make sure the service is provided
   bootstrap: [AppComponent]
 })
 export class AppModule { }
