@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     {'photo': 'images/persons/marama.jpg', 'message': 'Maram: Very helpful!'},
     {'photo': 'images/persons/sarrah.jpg', 'message': 'Sarra: Love the interface!'},
     {'photo': 'images/persons/roua.png', 'message': 'Roua: Well Structured!'},
-     {'photo': 'images/persons/maraw.png', 'message': 'Maram: Useful Schedule For Student!'},
+    {'photo': 'images/persons/maraw.png', 'message': 'Maram: Useful Schedule For Student!'},
   ];
 
   int _currentMessageIndex = 0;

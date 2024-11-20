@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:timemastermobile_front/Screens/add_name_school_screen.dart';
+import 'package:timemastermobile_front/school_managment/Screen/add_name_school_screen.dart';
+
 import 'package:timemastermobile_front/widgets/cover.dart';
 import 'package:timemastermobile_front/widgets/drawer_popup.dart';
 
