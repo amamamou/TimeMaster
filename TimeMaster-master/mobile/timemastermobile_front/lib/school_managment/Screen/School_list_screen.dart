@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timemastermobile_front/school_managment/data/school_api.dart';
 import 'package:timemastermobile_front/school_managment/data/school_model.dart';
-
+import 'package:timemastermobile_front/school_managment/Screen/update_school_screen.dart';
 
 class SchoolListScreen extends StatefulWidget {
   @override
@@ -14,7 +14,41 @@ class _SchoolListScreenState extends State<SchoolListScreen> {
   @override
   void initState() {
     super.initState();
-    _schoolsFuture = ApiService().fetchSchools(); // Fetch schools when the screen loads
+    _loadSchools();
+  }
+
+  void _loadSchools() {
+    setState(() {
+      _schoolsFuture = ApiService().fetchSchools(); // Fetch schools from API
+    });
+  }
+
+  void _deleteSchool(int id) async {
+    try {
+      // Call the delete API here (you'll need to implement it in `ApiService`)
+      await ApiService().deleteSchool(id);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('School deleted successfully!'),
+      ));
+      _loadSchools(); // Refresh the list after deletion
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Failed to delete school: $e'),
+      ));
+    }
+  }
+
+  void _updateSchool(School school) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => UpdateSchoolScreen(school: school),
+      ),
+    ).then((value) {
+      if (value == true) {
+        _loadSchools(); // Refresh the list after update
+      }
+    });
   }
 
   @override
@@ -34,15 +68,42 @@ class _SchoolListScreenState extends State<SchoolListScreen> {
             return Center(child: Text("No schools found"));
           }
 
-          // If data is successfully loaded
           final schools = snapshot.data!;
           return ListView.builder(
             itemCount: schools.length,
             itemBuilder: (context, index) {
               final school = schools[index];
-              return ListTile(
-                title: Text(school.name),
-                subtitle: Text("ID: ${school.id}"),
+              return Card(
+                elevation: 4,
+                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    child: Text(school.id.toString()),
+                    backgroundColor: Colors.blueAccent,
+                  ),
+                  title: Text(school.name, style: TextStyle(fontWeight: FontWeight.bold)),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Address: ${school.address}"),
+                      Text("Phone: ${school.phone}"),
+                      Text("Email: ${school.email}"),
+                    ],
+                  ),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.edit, color: Colors.orange),
+                        onPressed: () => _updateSchool(school), // Navigate to update screen
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.delete, color: Colors.red),
+                        onPressed: () => _deleteSchool(school.id), // Trigger delete
+                      ),
+                    ],
+                  ),
+                ),
               );
             },
           );
@@ -50,7 +111,11 @@ class _SchoolListScreenState extends State<SchoolListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/addNameSchool'); // Navigate to add school screen
+          Navigator.pushNamed(context, '/addSchool').then((value) {
+            if (value == true) {
+              _loadSchools(); // Refresh the list after adding
+            }
+          });
         },
         child: Icon(Icons.add),
       ),

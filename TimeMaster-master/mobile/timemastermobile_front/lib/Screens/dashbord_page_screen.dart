@@ -41,7 +41,7 @@ class DashbordPageScreen extends StatelessWidget {
                     route: ChangeDataSchollScreen()),
                 ChoiseCard(
                     icon: Icons.file_copy_outlined,
-                    title :"..." ,
+                    title :"Matter" ,
                     route: ChangeDataSchollScreen()),
                 ChoiseCard(
                     icon: Icons.insert_drive_file_outlined,
