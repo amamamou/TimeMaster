@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:timemastermobile_front/Authentification/loginPage.dart';
 
+
 import 'package:timemastermobile_front/Screens/tabs_screen.dart';
 import 'package:timemastermobile_front/home-page.dart';
+
+
+import 'package:timemastermobile_front/Screens/tabs_screen.dart';
+import 'package:timemastermobile_front/home-page.dart';
+
+
 
 
 class SlashScreen extends StatefulWidget {
