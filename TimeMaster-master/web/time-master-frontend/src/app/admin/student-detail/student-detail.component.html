@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <app-admin-sidebar></app-admin-sidebar>
+<div class="student-detail">
+    <h2>Détails de l'étudiant</h2>
+    <div class="detail-card">
+      <div class="detail-item">
+        <strong>Nom d'utilisateur :</strong>
+        <span>{{ student.username }}</span>
+      </div>
+      <div class="detail-item">
+        <strong>Rôle :</strong>
+        <span>{{ student.role }}</span>
+      </div>
+      <div class="detail-item">
+        <strong>Groupes de chevauchement :</strong>
+        <span>{{ student.overlappingGroups }}</span>
+      </div>
+     
+    </div>
+    <a routerLink="/students" class="back-button">Retour à la liste des étudiants</a>
+  </div>
+  </body>

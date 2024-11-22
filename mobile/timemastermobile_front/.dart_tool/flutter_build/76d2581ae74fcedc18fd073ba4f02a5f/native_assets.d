@@ -1,0 +1,1 @@
+ C:\\Users\\Roua's\ PC\\OneDrive\\Documents\\GitHub\\TimeMaster\\mobile\\timemastermobile_front\\.dart_tool\\flutter_build\\76d2581ae74fcedc18fd073ba4f02a5f\\native_assets.yaml: 

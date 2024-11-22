@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <app-admin-sidebar></app-admin-sidebar> 
+<div class="container">
+    <h2>Add Student</h2>
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" formControlName="username" />
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" />
+      </div>
+  
+      <div class="form-group">
+        <label for="role">Role</label>
+        <input id="role" formControlName="role" />
+      </div>
+  
+      <div class="form-group">
+        <label for="overlappingGroups">Overlapping Groups</label>
+        <input id="overlappingGroups" formControlName="overlappingGroups" />
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input id="email" formControlName="email" />
+      </div>
+      <div class="form-buttons">
+        <button type="submit" class="btn btn-primary" [disabled]="studentForm.invalid">Add Student</button>
+        <!-- Vous pouvez ajouter un bouton Cancel ou Back ici si nécessaire -->
+      
+      <button type="button" class="btn btn-secondary" (click)="goBack()">Cancel</button>
+    </div>
+    </form>
+  </div>
+</body>

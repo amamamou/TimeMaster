@@ -1,0 +1,110 @@
+.container {
+  font-family: 'Arial', sans-serif;
+  margin: auto;
+  padding: 40px;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 40px;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header img {
+  max-width: 70px;
+  display: block;
+  margin: 0;
+}
+
+.header-text {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 24px;
+}
+
+.form-container {
+  padding: 40px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin: 30px 0 10px;
+  font-size: 18px;
+}
+
+input {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button.create {
+  background-color: #4caf50;
+  color: white;
+}
+
+button.cancel {
+  background-color: #f44336;
+  color: white;
+}
+
+button.all-names {
+  background-color: #ff9800;
+  color: white;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+.go-back {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.app-layout {
+  display: flex;
+  height: 110vh; /* Full height of the viewport */
+}
+
+app-admin-sidebar {
+  width: 300px;
+  color: white;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  overflow-y: auto;
+}

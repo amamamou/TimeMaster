@@ -1,0 +1,37 @@
+<div class="app-container">
+
+    <app-user-sidebar></app-user-sidebar>
+
+    <div class="timetable-container">
+        <div class="user">
+
+            <img src="assets/profile.jpeg" alt="">
+            <h1><span style="color: #AE2025;">Hello, </span>Rayen</h1>
+
+        </div>
+        <h2>School Timetable</h2>
+        <div class="info">
+            <p>School : {{ schoolName }}</p> <!-- Display the school name -->
+            <p>Class : {{ className }}</p>   <!-- Display the class name -->
+        </div>
+    
+        <table class="timetable">
+        <thead>
+            <tr>
+            <th>Day</th>
+            <th>Period 1</th>
+            <th>Period 2</th>
+            <th>Period 3</th>
+            <th>Period 4</th>
+            <th>Period 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of timetable">
+            <td>{{ row.day }}</td>
+            <td *ngFor="let subject of row.subjects">{{ subject }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>    

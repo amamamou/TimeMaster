@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <app-admin-sidebar></app-admin-sidebar>
+   
+<div class="container">
+    <div *ngIf="!isEditing; else editForm">
+    <button class="add-button" (click)="goToAddTeacherPage()">Add Teacher</button>
+    
+    <!-- Display the list of teachers -->
+   
+        <h1>Teachers List</h1>
+
+        <!-- List of teachers -->
+        <div *ngIf="teachers.length > 0; else noTeachers">
+            <ul class="student-list">
+                <li *ngFor="let teacher of teachers">
+                    <span>{{ teacher.username }}</span> 
+
+                    <button class="detail-button" [routerLink]="['/teachers', teacher.id]">Informations</button> 
+                    <i class="fas fa-edit icon icon-edit" (click)="startEditing(teacher)" title="Edit"></i> 
+                    <i class="fas fa-trash-alt icon icon-delete" (click)="deleteTeacher(teacher.id)" title="Delete"></i>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Message if no teachers are available -->
+        <ng-template #noTeachers>
+            <p>No teachers available.</p>
+        </ng-template>
+    </div>
+
+    <!-- Display selected teacher details -->
+    <div *ngIf="selectedTeacher" class="teacher-details">
+        <h2>Teacher Details</h2>
+        <p><strong>Name:</strong> {{ selectedTeacher.username }}</p>
+        <p><strong>Max Days Per Week:</strong> {{ selectedTeacher.maxDaysPerWeek }}</p>
+        <p><strong>Max Hours Per Day:</strong> {{ selectedTeacher.maxHoursPerDay }}</p>
+        <p><strong>Max Gaps Per Day:</strong> {{ selectedTeacher.maxGapsPerDay }}</p>
+        <p><strong>Subject Specialization:</strong> {{ selectedTeacher.subjectSpecialization}}</p>
+        <p><strong>Assigned Activities:</strong> {{ selectedTeacher.assignedActivities}}</p>
+        <button (click)="clearSelectedTeacher()">Close</button>
+    </div>
+   
+    <!-- Teacher Edit Form -->
+    <ng-template #editForm>
+        <h2>Edit Teacher</h2>
+        <form [formGroup]="editTeacherForm" (ngSubmit)="updateTeacher()">
+            <label for="username">Name</label>
+            <input id="username" formControlName="username" />
+
+            <label for="password">Password</label>
+            <input id="password" formControlName="password" /> 
+
+            <label for="role">role</label>
+            <input id="role" formControlName="role" /> 
+
+            <label for="availability">availability</label>
+            <input id="availability" formControlName="availability" />
+
+
+            <label for="maxDaysPerWeek">Max Days Per Week</label>
+            <input id="maxDaysPerWeek" formControlName="maxDaysPerWeek" type="number" />
+
+            <label for="maxHoursPerDay">Max Hours Per Day</label>
+            <input id="maxHoursPerDay" formControlName="maxHoursPerDay" type="number" />
+
+            <label for="maxGapsPerDay">Max Gaps Per Day</label>
+            <input id="maxGapsPerDay" formControlName="maxGapsPerDay" type="number" />
+
+            <label for="subjectSpecialization">Subject Specialization</label>
+            <input id="subjectSpecialization" formControlName="subjectSpecialization" />
+
+            <label for="assignedActivities">Assigned Activities</label>
+            <input id="assignedActivities" formControlName="assignedActivities" />
+
+            <label for="email">email</label>
+            <input id="email" formControlName="email" />
+
+            <button type="submit">Update</button>
+            <button type="button" (click)="cancelEditing()">Cancel</button>
+        </form>
+    </ng-template>
+
+
+</div>
+</body>

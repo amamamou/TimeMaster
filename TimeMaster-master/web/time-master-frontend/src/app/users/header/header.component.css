@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header input {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .cover{
+    margin-top: 50px;
+    border-radius: 25px;
+    background-color: rgba(194, 189, 198, 0.439);
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    margin: 50px;
+  }
+
+  .title{
+    display: flex;
+    margin: 8px;
+  }
+
+  .title img{
+    width: 50px;
+    height: 44px;
+    margin: 15px;
+  }
+
+  .user-icon img {
+    width: 30px;     /* Adjust the size as needed */
+    height: 30px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;  /* Ensures the image is cropped to fit the circle */
+  }
+  

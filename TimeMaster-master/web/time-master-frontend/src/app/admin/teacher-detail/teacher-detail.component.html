@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <app-admin-sidebar></app-admin-sidebar> 
+<div class="teacher-detail" *ngIf="teacher">
+    <h2>Teacher Details</h2>
+    <div class="detail-card">
+      <div class="detail-item">
+        <strong>Name:</strong> {{ teacher.username }}
+      </div>
+      
+      <div class="detail-item">
+        <strong>password:</strong> {{ teacher.password }}
+      </div>
+      <div class="detail-item">
+        <strong>role:</strong> {{ teacher.role }}
+      </div>
+      <div class="detail-item">
+        <strong>availability:</strong> {{ teacher.availability }}
+      </div>
+      <div class="detail-item">
+        <strong>Max Days Per Week:</strong> {{ teacher.maxDaysPerWeek }}
+      </div>
+      <div class="detail-item">
+        <strong>Max Hours Per Day:</strong> {{ teacher.maxHoursPerDay }}
+      </div>
+      <div class="detail-item">
+        <strong>Max Gaps Per Day:</strong> {{ teacher.maxGapsPerDay }}
+      </div>
+      <div class="detail-item">
+        <strong>Subject Specialization:</strong> {{ teacher.subjectSpecialization }}
+      </div>
+      <div class="detail-item">
+        <strong>Assigned Activities:</strong> {{ teacher.assignedActivities}}
+      </div>
+      <div class="detail-item">
+        <strong>email:</strong> {{ teacher.email }}
+      </div>
+    </div>
+    <button class="back-button" (click)="backToTeacherList()">Back to Teachers List</button>
+    
+  </div>
+  
+  <div *ngIf="!teacher">
+    <p>Teacher details not available.</p>
+  </div>
+  </body>
