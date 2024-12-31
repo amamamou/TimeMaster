@@ -45,14 +45,14 @@ class DrawerPopup extends StatelessWidget {
 
               listTileWidget("School Data" , Icons.business ,
                (){
-                 Navigator.pop(context , '/addNameSchool') ;              
+                 Navigator.pushNamed(context , '/addNameSchool') ;              
                }
               ),
 
 
-              listTileWidget("Activite " , Icons.filter_alt_rounded ,
+              listTileWidget("Managment Time " , Icons.av_timer_rounded ,
                (){
-                   print("click 2") ;            
+                  Navigator.pushNamed(context , '/choiseParam') ;          
                 }
               ),
 
@@ -74,7 +74,35 @@ class DrawerPopup extends StatelessWidget {
                 }
               ),
 
-
+                const Spacer(), // Pushes the logout option to the bottom
+          listTileWidget("Logout", Icons.logout, () {
+            // Implement logout functionality
+            Navigator.pop(context); // Close the drawer
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text("Logout"),
+                  content: const Text("Are you sure you want to logout?"),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context); // Close the dialog
+                      },
+                      child: const Text("Cancel"),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context); // Close the dialog
+                        Navigator.pushReplacementNamed(context, '/login'); // Navigate to login
+                      },
+                      child: const Text("Logout"),
+                    ),
+                  ],
+                );
+              },
+            );
+          }),
       
             ],
           ),

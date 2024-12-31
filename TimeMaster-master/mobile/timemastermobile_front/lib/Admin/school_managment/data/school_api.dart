@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:timemastermobile_front/school_managment/data/school_model.dart';
+import 'package:timemastermobile_front/Admin/school_managment/data/school_model.dart';
 import 'package:timemastermobile_front/config.dart';
 
 class ApiService {
@@ -24,7 +24,7 @@ class ApiService {
     required String phone,
     required String email,
   }) async {
-    final url = Uri.parse('$baseUrl/establishment');
+    final url = Uri.parse('$baseUrl/establishments');
     final response = await http.post(
       url,
       headers: {"Content-Type": "application/json"},
@@ -42,7 +42,7 @@ class ApiService {
   }
 
   Future<void> deleteSchool(int id) async {
-  final url = Uri.parse('$baseUrl/establishment/$id');
+  final url = Uri.parse('$baseUrl/establishments/$id');
   final response = await http.delete(url);
 
   if (response.statusCode != 200) {
@@ -51,7 +51,7 @@ class ApiService {
 }
 
 Future<void> updateSchool(int id, String name, String address, String phone, String email) async {
-  final url = Uri.parse('$baseUrl/establishment/$id');
+  final url = Uri.parse('$baseUrl/establishments/$id');
   final response = await http.put(
     url,
     headers: {"Content-Type": "application/json"},

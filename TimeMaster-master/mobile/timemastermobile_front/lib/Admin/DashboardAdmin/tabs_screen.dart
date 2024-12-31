@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timemastermobile_front/Screens/dashbord_page_screen.dart';
+import 'package:timemastermobile_front/Admin/DashboardAdmin/dashbord_page_screen.dart';
 
 import 'schedule_screen.dart';
 

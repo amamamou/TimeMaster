@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:timemastermobile_front/Screens/change_data_scholl_screen.dart';
-import 'package:timemastermobile_front/widgets/drawer_popup.dart';
+import 'package:timemastermobile_front/Admin/DashboardAdmin/change_data_scholl_screen.dart';
+import 'package:timemastermobile_front/Admin/DashboardAdmin/drawer_admin.dart';
+import 'package:timemastermobile_front/Admin/matiere/ajoutmatiere.dart';
 
-import '../widgets/choise_card.dart';
-import '../widgets/cover.dart';
+import '../../widgets/choise_card.dart';
+import '../../widgets/cover.dart';
 
 class DashbordPageScreen extends StatelessWidget {
   const DashbordPageScreen({super.key});
@@ -34,36 +35,36 @@ class DashbordPageScreen extends StatelessWidget {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
               ),
-              children: const [
-                ChoiseCard(
+              children: [
+                const ChoiseCard(
                     icon: Icons.business,
                     title :"School Data" ,
                     route: ChangeDataSchollScreen()),
                 ChoiseCard(
                     icon: Icons.file_copy_outlined,
                     title :"Matter" ,
-                    route: ChangeDataSchollScreen()),
-                ChoiseCard(
+                    route: AjoutMatiereScreen(),),
+                const ChoiseCard(
                     icon: Icons.insert_drive_file_outlined,
                     title :"School Data" ,
                     route: ChangeDataSchollScreen()),
-                ChoiseCard(
+                const ChoiseCard(
                     icon: Icons.menu_book_sharp,
                     title :"School Data" ,
                     route: ChangeDataSchollScreen()),
-                ChoiseCard(
+                const ChoiseCard(
                     icon: Icons.date_range_outlined,
                     title :"School Data" ,
                     route: ChangeDataSchollScreen()),
-                ChoiseCard(
+                const ChoiseCard(
                     icon: Icons.supervised_user_circle_rounded,
                     title :"School Data" ,
                     route: ChangeDataSchollScreen()),
-                ChoiseCard(
+                const ChoiseCard(
                     icon: Icons.manage_accounts,
                     title :"School Data" ,
                     route: ChangeDataSchollScreen()),
-                ChoiseCard(
+                const ChoiseCard(
                     icon: Icons.filter_alt_rounded,
                     title :"School Data" ,
                     route: ChangeDataSchollScreen()),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:timemastermobile_front/school_managment/data/school_api.dart';
-import 'package:timemastermobile_front/school_managment/data/school_model.dart';
-import 'package:timemastermobile_front/school_managment/Screen/update_school_screen.dart';
+import 'package:timemastermobile_front/Admin/school_managment/data/school_api.dart';
+import 'package:timemastermobile_front/Admin/school_managment/data/school_model.dart';
+import 'package:timemastermobile_front/Admin/school_managment/addSchool/update_school_screen.dart';
 
 class SchoolListScreen extends StatefulWidget {
   @override

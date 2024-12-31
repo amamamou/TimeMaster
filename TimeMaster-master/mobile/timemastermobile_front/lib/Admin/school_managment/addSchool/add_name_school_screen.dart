@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timemastermobile_front/school_managment/data/school_api.dart';
+import 'package:timemastermobile_front/Admin/school_managment/data/school_api.dart';
 import 'package:timemastermobile_front/widgets/container_info.dart';
 import 'package:http/http.dart' as http ;
 
