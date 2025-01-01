@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:timemastermobile_front/school_managment/Screen/School_list_screen.dart';
 import 'package:timemastermobile_front/school_managment/Screen/add_name_school_screen.dart';
 import 'package:timemastermobile_front/Screens/change_data_scholl_screen.dart';
@@ -14,6 +15,22 @@ import 'package:timemastermobile_front/students/student_list_screen.dart';
 
 import 'package:timemastermobile_front/school_managment/Screen/update_school_screen.dart';
 import 'package:timemastermobile_front/school_managment/data/school_model.dart'; // Make sure you import the School model
+import 'package:timemastermobile_front/Admin/school_managment/addTime/choise_param.dart';
+import 'package:timemastermobile_front/Authentification/loginPage.dart';
+import 'package:timemastermobile_front/Admin/school_managment/addSchool/School_list_screen.dart';
+import 'package:timemastermobile_front/Admin/school_managment/addSchool/add_name_school_screen.dart';
+import 'package:timemastermobile_front/Admin/DashboardAdmin/change_data_scholl_screen.dart';
+import 'package:timemastermobile_front/Admin/DashboardAdmin/dashbord_page_screen.dart';
+import 'package:timemastermobile_front/Admin/DashboardAdmin/schedule_screen.dart';
+import 'package:timemastermobile_front/Admin/DashboardAdmin/tabs_screen.dart';
+import 'package:timemastermobile_front/Splash%20Screen/slash_screen.dart';
+import 'package:timemastermobile_front/User/Screen/dashboardUser.dart';
+import 'package:timemastermobile_front/User/Screen/discussion.dart';
+import 'package:timemastermobile_front/User/Screen/emploi.dart';
+import 'package:timemastermobile_front/Admin/matiere/ajoutmatiere.dart';
+import 'package:timemastermobile_front/Admin/school_managment/addSchool/update_school_screen.dart';
+import 'package:timemastermobile_front/Admin/school_managment/data/school_model.dart';
+
 
 
 void main() {
@@ -29,12 +46,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Time Master",
       theme: ThemeData(
-        primaryColor: const Color.fromRGBO(65, 105, 225, 100),
+        primaryColor: const Color.fromRGBO(65, 105, 225, 1),
         colorScheme: ColorScheme.fromSwatch().copyWith(
-            secondary: const Color.fromRGBO(183, 28, 28, 1)),
+          secondary: const Color.fromRGBO(183, 28, 28, 1),
+        ),
         brightness: Brightness.light,
         appBarTheme: const AppBarTheme(
-          color: Color.fromRGBO(65, 105, 225, 100),
+          color: Color.fromRGBO(65, 105, 225, 1),
           elevation: 4,
           centerTitle: true,
         ),
@@ -42,19 +60,22 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       onGenerateRoute: (settings) {
         if (settings.name == '/updateSchool') {
-          final School school = settings.arguments as School;
+          final school = settings.arguments as School;
           return MaterialPageRoute(
             builder: (context) => UpdateSchoolScreen(school: school),
           );
         }
-        return null; // Add other routes here
+        // Ajoutez d'autres routes avec paramètres ici si nécessaire.
+        return null;
       },
       routes: {
+        
         '/': (context) => const SlashScreen(),
+        '/dashboardUser': (context) => const Dashboarduser(),
         '/tabBar': (context) => const TabBarScreen(),
         '/dashboard': (context) => const DashbordPageScreen(),
         '/schedule': (context) => const ScheduleScreen(),
-        '/login': (context) => const LoginScreen(),
+        '/login': (context) => LoginPage(),
         '/changeDataSchool': (context) => const ChangeDataSchollScreen(),
 
 
@@ -64,8 +85,13 @@ class MyApp extends StatelessWidget {
          '/students': (context) => StudentListScreen(),
 
         '/matieres': (context) => AjoutMatiereScreen(),
-        '/addNameSchool': (contex) => const AddNameCollageScreen(),
+        '/addNameSchool': (context) => const AddNameCollageScreen(),
         '/listSchoolName': (context) => SchoolListScreen(),
+
+        '/timetable': (context) => Emploi(),
+        '/discussion': (context) => Discussion(),
+        '/choiseParam': (context) => ChoiseParam(),
+
 
       },
     );

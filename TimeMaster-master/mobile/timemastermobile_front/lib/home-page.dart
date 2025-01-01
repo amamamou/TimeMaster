@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:timemastermobile_front/Authentification/loginPage.dart';
-import 'package:timemastermobile_front/matiere/ajoutmatiere.dart';
-import 'package:timemastermobile_front/matiere/matiere.dart';
-import 'package:timemastermobile_front/matiere/matiere_service.dart';
+import 'package:timemastermobile_front/Admin/matiere/ajoutmatiere.dart';
+import 'package:timemastermobile_front/Admin/matiere/matiere.dart';
+import 'package:timemastermobile_front/Admin/matiere/matiere_service.dart';
 
 class HomePage extends StatefulWidget {
   @override

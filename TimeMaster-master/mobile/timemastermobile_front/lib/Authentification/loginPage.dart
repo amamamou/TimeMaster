@@ -3,10 +3,11 @@ import 'package:http/http.dart' as http; // Import the HTTP package
 import 'dart:convert'; // For JSON encoding and decoding
 
 class LoginPage extends StatelessWidget {
-  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController identifierController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   LoginPage({super.key});
+
   Future<void> _login(BuildContext context) async {
     const String apiUrl = 'http://localhost:3000/users/login';
 
@@ -15,33 +16,34 @@ class LoginPage extends StatelessWidget {
         Uri.parse(apiUrl),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
-          "username": usernameController.text,
+          "identifier": identifierController.text, // Can be email or username
           "password": passwordController.text,
         }),
       );
 
-      print('Response status code: ${response.statusCode}');
-      print('Response body: ${response.body}');
-
       if (response.statusCode == 200) {
         final responseData = jsonDecode(response.body);
 
-        // Check if redirectUrl is present and navigate accordingly
-        if (responseData['redirectUrl'] == '/tabBar') {
-          Navigator.pushReplacementNamed(context, '/tabBar');
+        // Extract the redirect URL from the backend response
+        final redirectUrl = responseData['redirectUrl'];
+
+        if (redirectUrl == '/dashboard') {
+          Navigator.pushReplacementNamed(context, '/dashboard'); // Admin dashboard
+        } else if (redirectUrl == '/') { //a4i tetbadel wa9ta yetbadel el backend
+          Navigator.pushReplacementNamed(context, '/dashboardUser'); // User dashboard
         } else {
-          _showErrorDialog(context, responseData['message']);
+          _showErrorDialog(context, "Unknown redirect URL");
         }
       } else {
-        _showErrorDialog(context, "Server error. Please try again.");
+        final responseData = jsonDecode(response.body);
+        _showErrorDialog(context, responseData['message'] ?? "Login failed");
       }
     } catch (error) {
-      print('Error: $error');
       _showErrorDialog(context, "Connection error. Please try again.");
     }
   }
 
-// Function to show error dialog
+  // Function to show error dialog
   void _showErrorDialog(BuildContext context, String message) {
     showDialog(
       context: context,
@@ -67,7 +69,6 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Main login content
           Padding(
             padding: const EdgeInsets.fromLTRB(40.0, 150.0, 40.0, 40.0),
             child: SingleChildScrollView(
@@ -96,9 +97,9 @@ class LoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 30),
                     TextFormField(
-                      controller: usernameController,
+                      controller: identifierController,
                       decoration: const InputDecoration(
-                        hintText: 'Username',
+                        hintText: 'Email or Username',
                         contentPadding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                       ),
@@ -115,10 +116,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacementNamed(context,
-                            '/tabBar'); // Hardcoded navigation for testing
-                      },
+                      onPressed: () => _login(context), // Call the login function
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(double.infinity, 50),
                         shape: RoundedRectangleBorder(
